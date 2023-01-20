@@ -27,6 +27,18 @@ const createEmployee = (req,res)=>{
     );
 };
 
+//for getting all employees from data base
+const getEmployee = (req,res)=>{
+    pool.query("SELECT * FROM employee",(err,result)=>{
+        if(err){
+            throw err
+        }
+        res.json({
+            data:result.rows
+        })
+    })
+}
+
 module.exports={
-    createEmployee
+    createEmployee,getEmployee
 }

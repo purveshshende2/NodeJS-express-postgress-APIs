@@ -7,6 +7,7 @@ const PORT = 4200
 app.use(express.json())
 
 app.post('/add', dbEmp.createEmployee)
+app.get('/all',dbEmp.getEmployee)
 // app.get("/",(req,res)=>{
 //     res.send("update hai re");
 // })
